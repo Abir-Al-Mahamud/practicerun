@@ -71,6 +71,35 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "practiceapplication_production"
 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.sendgrid.net',
+  #   port:                 587,
+  #   domain:               'yourdomain.com',
+  #   user_name:            'apikey',
+  #   password:             'your_sendgrid_api_key',
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true
+  # }
+
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.default_url_options = { host: 'yourdomain.com' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    domain:               'yourdomain.com',
+    user_name:            'apikey',
+    password:             ENV['SENDGRID_API_KEY'],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'yourdomain.com' }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
