@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticker Symbol:</strong>
+  <%= @stock.ticker_symbol %>
+</p>
+
+<p>
+  <strong>Company Name:</strong>
+  <%= @stock.company_name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @stock.price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @stock.quantity %>
+</p>
+
+<p>
+  <strong>Market Cap:</strong>
+  <%= @stock.market_cap %>
+</p>
+
+<p>
+  <strong>PE Ratio:</strong>
+  <%= @stock.pe_ratio %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
